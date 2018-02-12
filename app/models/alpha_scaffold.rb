@@ -1,0 +1,2 @@
+class AlphaScaffold < ApplicationRecord
+end
