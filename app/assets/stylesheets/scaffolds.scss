@@ -20,20 +20,21 @@ pre {
 }
 
 a {
-  color: #000;
+  color: blue;
 
   &:visited {
-    color: #666;
+    color: blue;
   }
 
   &:hover {
     color: #fff;
-    background-color: #000;
+    background-color: black;
   }
 }
 
 th {
   padding-bottom: 5px;
+  color: blue;
 }
 
 td {
@@ -76,6 +77,7 @@ div {
   ul li {
     font-size: 12px;
     list-style: square;
+
   }
 }
 

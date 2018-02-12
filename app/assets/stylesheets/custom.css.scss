@@ -1,3 +1,21 @@
+$navbar-default-bg: #99A3A4;
+
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+footer{
+    margin-top: 120px;
+    padding-top: 5px;
+    border-top: 1px solid #eaeaea;
+    color: #777;
+}   
+
+footer small {
+    float: left;
+}
+
+footer ul {
+    float: right;
+    list-style: none;
+}
