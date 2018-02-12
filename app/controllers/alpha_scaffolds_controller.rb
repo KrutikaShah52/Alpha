@@ -25,15 +25,17 @@ class AlphaScaffoldsController < ApplicationController
   # POST /alpha_scaffolds.json
   def create
      @alpha_scaffold = AlphaScaffold.new(alpha_scaffold_params)
-     @alpha_scaffold.save
     # respond_to do |format|
-    #   if @alpha_scaffold.save
-    #     format.html { redirect_to @alpha_scaffold, notice: 'Alpha scaffold was successfully created.' }
-    #     format.json { render :show, status: :created, location: @alpha_scaffold }
-    #   else
+      if @alpha_scaffold.save
+        flash[:notice] = "Successfully created..."
+        redirect_to alpha_scaffolds_path
+        #  format.html { redirect_to @alpha_scaffold, notice: 'Alpha scaffold was successfully created.' }
+        # format.json { render :show, status: :created, location: @alpha_scaffold }
+      else
     #     format.html { render :new }
+        render 'new'
     #     format.json { render json: @alpha_scaffold.errors, status: :unprocessable_entity }
-    #   end
+       end
     # endalpha_scaffold
 
   end
@@ -56,6 +58,7 @@ class AlphaScaffoldsController < ApplicationController
   # DELETE /alpha_scaffolds/1.json
   def destroy
     @alpha_scaffold.destroy
+    flash[:notice] = "Successfully deleted..."
     respond_to do |format|
       format.html { redirect_to alpha_scaffolds_url, notice: 'Alpha scaffold was successfully destroyed.' }
       format.json { head :no_content }

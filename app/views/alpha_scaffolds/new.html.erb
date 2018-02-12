@@ -4,22 +4,4 @@
 
 <h1> Create new Article </h1>
 
-<%=  form_for @alpha_scaffold do |f| %>
-
-
-  <p>
-    <%= f.label :title%>
-    <%= f.text_field :title%>
-  </p>
-  
-  <p>
-    <%= f.label :descreption%>
-    <%= f.text_area :descreption%>
-  </p>
-
-  <p>
-    <%= f.submit%>
-  </p>
-
-<% end %>
-
+<%= render 'form'%>
