@@ -28,10 +28,10 @@ class AlphaScaffoldsController < ApplicationController
   
   def create
     @alpha_scaffold = AlphaScaffold.new(alpha_scaffold_params)
-
+    @alpha_scaffold.user = User.first
     respond_to do |format|
       if @alpha_scaffold.save
-        format.html { redirect_to @alpha_scaffold, notice: 'Article was successfully created.' }
+        format.html { redirect_to @alpha_scaffold, notice: 'Articles was successfully created.' }
         format.json { render :show, status: :created, location: @alpha_scaffold }
       else
         format.html { render :new }
