@@ -22,4 +22,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-I M JUST TRYING TO CHANGE MY FILE AND WANT TO CHECK GIT HUB REPOSITORY.

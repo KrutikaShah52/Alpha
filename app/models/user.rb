@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    has_many :alpha_scaffold
+    before_save {self.email = email.downcase}
     validates :username, presence: true, 
                uniqueness: { case_sensitive: false }, 
                length: {minimum: 3, maximum: 25}
@@ -9,6 +11,4 @@ class User < ApplicationRecord
                uniqueness: { case_sensitive: false }, 
                length: {maximum: 50}, 
                format: { with: VALID_EMAIL_REGEX }
-    
-    
 end
