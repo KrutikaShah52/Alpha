@@ -1,0 +1,26 @@
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Descreption</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% obj.each do |alpha_scaffold| %>
+      <tr>
+        <td><%= alpha_scaffold.title %></td>
+        <td><%= alpha_scaffold.descreption %></td>
+        <td><%= link_to 'Show', alpha_scaffold %></td>
+        <td><%= link_to 'Edit', edit_alpha_scaffold_path(alpha_scaffold) %></td>
+        <td><%= link_to 'Destroy', alpha_scaffold, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Alpha Scaffold', new_alpha_scaffold_path %>
