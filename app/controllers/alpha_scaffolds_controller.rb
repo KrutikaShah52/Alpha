@@ -4,7 +4,7 @@ class AlphaScaffoldsController < ApplicationController
   # GET /alpha_scaffolds
   # GET /alpha_scaffolds.json
   def index
-    @alpha_scaffolds = AlphaScaffold.all
+    @alpha_scaffolds = AlphaScaffold.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /alpha_scaffolds/1
