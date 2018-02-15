@@ -84,7 +84,7 @@ class AlphaScaffoldsController < ApplicationController
     end
 
     def require_same_user
-      if current_user != @alpha_scaffold.user
+      if current_user != @alpha_scaffold.user && !current_user.admin?
         flash[:danger] = "You can only delete and edit your own articles"
         redirect_to root_path
       end

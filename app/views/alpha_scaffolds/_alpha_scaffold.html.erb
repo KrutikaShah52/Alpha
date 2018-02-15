@@ -14,7 +14,7 @@
         <td><%= alpha_scaffold.descreption %></td>
         <td><%= link_to 'Show', alpha_scaffold %></td>
 
-      <% if logged_in? && current_user == alpha_scaffold.user %>
+      <% if logged_in? && (current_user == alpha_scaffold.user || current_user.admin?) %>
         <td><%= link_to 'Edit', edit_alpha_scaffold_path(alpha_scaffold) %></td>
         <td><%= link_to 'Destroy', alpha_scaffold, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% end %>

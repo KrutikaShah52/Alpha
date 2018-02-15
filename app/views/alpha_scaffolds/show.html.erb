@@ -24,7 +24,7 @@
   <%= @alpha_scaffold.descreption %>
 </p>
 
-<% if logged_in? && current_user == @alpha_scaffold.user %>
+<% if logged_in? && (current_user == @alpha_scaffold.user || current_user.admin?) %>
     <%= link_to 'Edit', edit_alpha_scaffold_path(@alpha_scaffold), class: "btn btn-xl btn-primary" %>
     <%= link_to "Delete", user_path(@alpha_scaffold), method: :delete,
                         data: { confirm: "Are you sure want to delete?" },
