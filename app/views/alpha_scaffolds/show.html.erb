@@ -24,5 +24,10 @@
   <%= @alpha_scaffold.descreption %>
 </p>
 
-<%= link_to 'Edit', edit_alpha_scaffold_path(@alpha_scaffold) %> |
-<%= link_to 'Back', alpha_scaffolds_path %>
+<% if logged_in? && current_user == @alpha_scaffold.user %>
+    <%= link_to 'Edit', edit_alpha_scaffold_path(@alpha_scaffold), class: "btn btn-xl btn-primary" %>
+    <%= link_to "Delete", user_path(@alpha_scaffold), method: :delete,
+                        data: { confirm: "Are you sure want to delete?" },
+                        class: "btn btn-xl btn-primary" %>
+<% end %>
+<%= link_to "View", alpha_scaffolds_path, class: "btn btn-primary btn-xl" %>
