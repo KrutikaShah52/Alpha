@@ -8,13 +8,14 @@ before_action :require_same_user, only: [:edit, :update]
 
     def new
         @user = User.new
-    end
+    end 
 
     def create
         @user = User.new(user_params)
         if @user.save
-            # flahs[:success] = "Welcome to the alpha blog #{@user.username}"
-            redirect_to alpha_scaffolds_path
+            session[:user_id] = @user.id
+            flash[:success] = "Welcome to the alpha blog #{@user.username}"
+            redirect_to user_path(@user)
         else
             render 'new'   #and show the error messages from users.new.html.ebr file
         end
