@@ -34,7 +34,8 @@ class AlphaScaffoldsController < ApplicationController
   
   def create
     @alpha_scaffold = AlphaScaffold.new(alpha_scaffold_params)
-    @alpha_scaffold.user = User.first
+    # @alpha_scaffold.user = User.first
+    @alpha_scaffold.user = current_user
     # puts "----------------#{@alpha_scaffold}"
     respond_to do |format|
       if @alpha_scaffold.save
